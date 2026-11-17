@@ -8,4 +8,4 @@
 检查源码：python -m compileall -q exchange。
 运行本地演练：python -m exchange --database demo.db。
 
-exchange/catalog.py 登记来源字段和原件，grants.py 与 policy.py 管理使用边界，products.py 编排资料，delivery.py 出具回执，audit.py 记录操作。现有接口只覆盖单次登记、编排和交付，目录职责及当前边界可从源码与测试读取。
+exchange/standards.py 管理评价标准版本、字段沿用关系与中止/撤回影响，catalog.py 登记来源字段和原件，grants.py 与 policy.py 管理使用边界，products.py 编排资料，delivery.py 出具回执，audit.py 记录操作。来源字段目录、产品引用和交付回执均携带评价标准编号与版本；旧材料保持 unversioned/0，不会被重新解释成新口径。字段沿用、重新取证与状态差异见 docs/standards.md。现有接口只覆盖单次登记、编排和交付，目录职责及当前边界可从源码与测试读取。

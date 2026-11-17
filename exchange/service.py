@@ -5,11 +5,13 @@ from .delivery import Delivery
 from .grants import Grants
 from .policy import Policies
 from .products import Products
+from .standards import Standards
 
 
 class Exchange:
     def __init__(self, database):
         self.connection = connect(database)
+        self.standards = Standards(self.connection)
         self.catalog = Catalog(self.connection)
         self.grants = Grants(self.connection)
         self.policies = Policies(self.connection)
